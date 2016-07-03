@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;;
+    vertical-align: top;
+}
+
+html {
+    margin: 0;
+    background: #fafafa;
+    display: flex;
+    justify-content: center;
+    padding: 8px 0 24px 0;
+
+    font-family: 'Open Sans';
+    /*font-family: 'PT Sans';*/
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+body {
+    background: #ffffff;
+    max-width: 780px;
+    border: 1px solid rgba(0, 0, 0, .12);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .12);
+    padding: 24px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contact-details {
+    font-size: .9em;
+    flex-shrink: 0;
+}
+.contact-details .icon {
+    height: 100%;
+}
+.contact-details .text {
+    line-height: 24px;
+    margin: 0;
+    display: inline;
+    color: #0e73c0;
+}
+.contact-details .item {
+    height: 24px;
+    margin: 4px 0;
+}
+
+p a:hover,
+.contact-details a:hover .text {
+    background: #0e73c0;
+    color: white;
+}
+
+.main-header .content {
+    display: flex;
+}
+.main-header .content .name {
+    font-size: 90px;
+    margin: 0;
+    line-height: 1em;
+    letter-spacing: -3px;
+}
+
+.main-header .sub-header {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 12px 0;
+    letter-spacing: 6px;
+    font-weight: 200;
+    color: rgba(0, 0, 0, .54);
+}
+
+.full-width {
+    width: 100%;
+}
+.cv-section p {
+    margin: 0;
+}
+.main-header,
+.cv-section:not(:last-of-type) {
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+.cv-section {
+    padding: 16px 0;
+}
+.cv-section:not(.non-flex) {
+    display: flex;
+}
+
+.cv-section.text p:not(last-of-type) {
+    margin-bottom: 8px;
+}
+
+.cv-section article:not(:first-of-type) {
+    padding-top: 16px;
+}
+.cv-section article:not(:last-of-type) {
+    padding-bottom: 16px;
+}
+.cv-section article:not(:last-of-type) {
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.cv-section .header {
+    flex-shrink: 0;
+    width: 200px;
+}
+.cv-section .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ul.flexed {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul.unstyled {
+    margin: 0;
+    padding: 0;
+}
+ul.unstyled li {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+li:not(:last-of-type)::after {
+    display: inline-block;
+    content: '|';
+    color: rgba(0, 0, 0, .54);
+    margin: 0 16px;
+}
+
+.skills ul:not(:first-of-type) {
+    margin-top: 8px;
+}
+
+.skills ul li {
+    flex-shrink: 0;
+}
+
+.skills .minor {
+    font-size: .8em;
+    color: rgba(0, 0, 0, .54);
+}
+
+.cv-section .duration {
+    color: rgba(0, 0, 0, .54);
+    font-style: italic;
+    font-size: 14px;
+}
+
+.cv-section.subsection {
+    border: none;
+}
+.cv-section.subsection:not(:first-child) {
+    border-top: 1px dashed rgba(0, 0, 0, .12);
+}
+.cv-section.subsection:not(:first-child) .header {
+    color: rgba(0, 0, 0, .54);
+}
+.cv-section.subsection:last-of-type {
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+@media print {
+    html {
+        padding: 0;
+        background: #ffffff;
+    }
+    body {
+        border: none;
+        box-shadow: none;
+    }
+}
+
+@media print {
+    @page {
+        margin-top: 25mm;
+    }
+
+    /* @page does not work, manually fixing these */
+    .cv-section.print-no-border {
+        border-bottom: none;
+    }
+
+    .print-force-margin {
+        padding-top: 25mm;
+    }
+}
+
+
+@media screen and (max-width: 780px){
+    html {
+        padding: 0;
+    }
+    body {
+        border: none;
+    }
+    .main-header .content .name {
+        font-size: 75px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    body {
+        padding: 24px 8px;
+    }
+    .cv-section {
+        flex-direction: column;
+    }
+    .cv-section .header {
+        margin-bottom: 8px;
+    }
+
+    .main-header .content {
+        flex-direction: column;
+    }
+
+    .main-header .contact-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 16px 0;
+    }
+    .main-header .contact-details .item {
+        width: 50%;
+    }
+
+    .main-header .content .name {
+        font-size: 60px;
+    }
+}
