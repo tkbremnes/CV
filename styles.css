@@ -11,7 +11,6 @@ html {
     padding: 8px 0 24px 0;
 
     font-family: 'Open Sans';
-    /*font-family: 'PT Sans';*/
 }
 
 h1, h2, h3, h4 {
@@ -67,7 +66,7 @@ p a:hover,
     display: flex;
 }
 .main-header .content .name {
-    font-size: 90px;
+    font-size: 80px;
     margin: 0;
     line-height: 1em;
     letter-spacing: -3px;
@@ -192,7 +191,7 @@ li:not(:last-of-type)::after {
 
 @media print {
     @page {
-        margin-top: 25mm;
+        margin-top: 10mm;
     }
 
     /* @page does not work, manually fixing these */
@@ -201,7 +200,8 @@ li:not(:last-of-type)::after {
     }
 
     .print-force-margin {
-        padding-top: 25mm;
+        page-break-before: always;
+        margin-top: 15mm;
     }
 }
 
